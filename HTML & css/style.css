@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: rgb(205, 19, 19);
+  }
+  
+  .snowfall {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #541212;
+    border-radius: 50%;
+    animation: falling 5s linear infinite;
+  }
+  
+  @keyframes falling {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+  
+  /* Create multiple snowflakes */
+  .snowfall:nth-child(2) {
+    left: 20%;
+    animation-duration: 8s;
+  }
+  
+  .snowfall:nth-child(3) {
+    left: 40%;
+    animation-duration: 6s;
+  }
+  
+  .snowfall:nth-child(4) {
+    left: 60%;
+    animation-duration: 7s;
+  }
+  
+  .snowfall:nth-child(5) {
+    left: 80%;
+    animation-duration: 9s;
+  }
+  

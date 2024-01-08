@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#button {
+    width: 150px;
+    height: 100px;
+    font-family: Spantaran;
+    background-color:red;
+    border-radius: 50px;
+    color: aquamarine;
+    font-size: 30px;
+}
+    </style>
+</head>
+<body>
+    <form>
+        <label for="c">C</label>
+        <input type="" name="lang" id="c" value="c"> <br>
+        <label for="java">Java</label> 
+        <input type="checkbox" name="lang" id="java" value="java"><br>
+        <label for="python">Python</label>
+        <input type="checkbox" name="lang" id="python" value="python">
+    </form>
+
+    <form action="/submit.php" >
+        <label for="male">Male:</label>
+        <input type="radio" id="male" name="gender" value="male"> <br>
+        <label for="female">Female:</label>
+        <input type="radio" id="female"name="gender" value="female"> <br>
+        <label for="other">Other:</label>
+        <input type="radio" id="other" name="gender" value="other"> <br>
+        <button id="button">submit</button>
+    </form>
+</body>
+</html>

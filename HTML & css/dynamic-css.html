@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India States and Districts Dropdown</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    label {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <label for="states">Select State:</label>
+    <select id="states" name="states" onchange="populateDistricts()">
+      <option value="select" selected disabled>Select State</option>
+      <option value="andhra_pradesh" >Andhra Pradesh</option>
+      <option value="arunachal_pradesh">Arunachal Pradesh</option>
+      <option value="assam">Assam</option>
+      <option value="bihar">Bihar</option>
+      <!-- Add other states here -->
+    </select>
+
+    <br>
+
+    <label for="districts">Select District:</label>
+    <select id="districts" name="districts">
+      <option value="select" selected disabled>Select District</option>
+    </select>
+
+    <br>
+
+    <button type="button" onclick="displaySelected()">Submit</button>
+  </form>
+
+  <script>
+    const districtsData = {
+      andhra_pradesh: ["Select District", "Anantapur", "Chittoor", "Kurnool", "Vishakhapatnam"],
+      arunachal_pradesh: ["Select District", "Itanagar", "Tawang", "Namsai", "Changlang"],
+      assam: ["Select District", "Guwahati", "Dibrugarh", "Jorhat", "Silchar"],
+      bihar: ["Select District", "Patna", "Gaya", "Muzaffarpur", "Bhagalpur"],
+      // Add data for other states here
+    };
+
+    function populateDistricts() {
+      const stateSelect = document.getElementById("states");
+      const districtSelect = document.getElementById("districts");
+      const selectedState = stateSelect.value;
+
+      // Clear existing options
+      districtSelect.innerHTML = '';
+
+      // Populate districts based on the selected state
+      const districts = districtsData[selectedState] || [];
+      districts.forEach(district => {
+        const option = document.createElement('option');
+        option.value = district;
+        option.text = district;
+        districtSelect.add(option);
+      });
+    }
+
+    function displaySelected() {
+      const selectedState = document.getElementById("states").value;
+      const selectedDistrict = document.getElementById("districts").value;
+      alert(`Selected State: ${selectedState}, Selected District: ${selectedDistrict}`);
+    }
+  </script>
+
+</body>
+</html>
